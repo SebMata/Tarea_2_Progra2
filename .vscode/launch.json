@@ -8,7 +8,7 @@
             "name": "g++ - Debug program",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/Tarea2",
+            "program": "${workspaceFolder}/bin/planilla",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
