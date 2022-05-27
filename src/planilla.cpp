@@ -23,7 +23,14 @@ Planilla::~Planilla() {
 void Planilla::AgregarEmpleado(Empleado *nuevoEmpleado) {
     this->empleados.push_back(nuevoEmpleado);
     if(jefe==nullptr){
-        
+        this->jefe=nuevoEmpleado;
+        nuevoEmpleado->AsigneSupervisor(nuevoEmpleado);
+        this->indiceEmpleados.insert( std::pair<int, Empleado *>(nuevoEmpleado->ObtenerId(), jefe));
+    }else{
+        Empleado* supervisor = this->indiceEmpleados.at(nuevoEmpleado->ObtenerIdSupervisor());
+        nuevoEmpleado->AsigneSupervisor(supervisor);
+        supervisor->InsertarSubordinado(nuevoEmpleado);
+        this->indiceEmpleados.insert( std::pair<int, Empleado *>(nuevoEmpleado->ObtenerId(), nuevoEmpleado));
     }
 }
 
