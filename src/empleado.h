@@ -15,8 +15,11 @@ class Empleado{
     string email;
     int tipo;
     int idSupervisor;
+    double monto;
     Empleado *supervisor;
     vector<Empleado *> subordinados;
+    int horas;
+    double impuestos;
 
     public:
     Empleado();
@@ -26,7 +29,12 @@ class Empleado{
     virtual void CalculoPago() = 0;
     virtual int ObtenerIdSupervisor();
     virtual int ObtenerId();
+    virtual void AsignarMonto(double EntradaMonto);
     virtual string ObtenerNombre();
+    virtual double ObtenerPago();
+    virtual double ObtenerImpuestos();
+    virtual void AsignarHoras(int horasEntrada);
+    
 
     friend istream& operator >> (istream &o, Empleado *empleado);
     friend ostream& operator << (ostream &o, const Empleado *empleado);

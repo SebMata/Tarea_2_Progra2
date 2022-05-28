@@ -11,12 +11,13 @@ all:
 	
 test:
 	mkdir -p bin
-	g++ $(FLAGS) tests/tests_envio_postal.cpp -o bin/tests_envio_postal.o
-	g++ $(FLAGS) tests/tests_envio_fedex.cpp -o bin/tests_envio_fedex.o
-	g++ $(FLAGS) src/TipoEnvio.cpp -o bin/TipoEnvio.o 
-	g++ $(FLAGS) src/EnvioPostal.cpp -o bin/EnvioPostal.o 
-	g++ $(FLAGS) src/EnvioFedex.cpp -o bin/EnvioFedex.o
-	g++ -g -o bin/tests bin/tests_envio_postal.o bin/tests_envio_fedex.o bin/TipoEnvio.o bin/EnvioPostal.o bin/EnvioFedex.o -lgtest -lgtest_main -lpthread 
+	g++ $(FLAGS) tests/empleadoHoras_tests.cpp -o bin/empleadoHoras_tests.o
+	g++ $(FLAGS) tests/empleadoNominas_tests.cpp -o bin/empleadoNominas_tests.o
+	g++ $(FLAGS) src/empleado.cpp -o bin/empleado.o
+	g++ $(FLAGS) src/empleadoNomina.cpp -o bin/empleadoNomina.o
+	g++ $(FLAGS) src/empleadoHoras.cpp -o bin/empleadoHoras.o
+	g++ $(FLAGS) src/planilla.cpp -o bin/planilla.o
+	g++ -g -o bin/tests bin/empleadoHoras_tests.o bin/empleadoNominas_tests.o bin/empleado.o bin/empleadoNomina.o bin/empleadoHoras.o bin/planilla.o -lgtest -lgtest_main -lpthread 
 
 clean:
 	rm -Rf bin

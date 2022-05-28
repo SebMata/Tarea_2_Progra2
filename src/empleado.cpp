@@ -24,6 +24,26 @@ int Empleado::ObtenerId()
     return this->id;
 }
 
+double Empleado::ObtenerPago()
+{
+    return this->monto;
+}
+
+double Empleado::ObtenerImpuestos()
+{
+    return this->impuestos;
+}
+
+void Empleado::AsignarMonto(double EntradaMonto)
+{
+    this->monto=EntradaMonto;
+}
+
+void Empleado::AsignarHoras(int horasEntrada)
+{
+    this->horas=horasEntrada;
+}
+
 string Empleado::ObtenerNombre()
 {
     return this->nombre + " " + this->apellido;
@@ -31,7 +51,7 @@ string Empleado::ObtenerNombre()
 
 ostream& operator << (ostream &o, const Empleado *empleado)
 {
-    o << empleado->id << "," << empleado->nombre << "," << empleado->apellido << "," << empleado->supervisor->ObtenerNombre() << "," << empleado->tipo;
+    o << empleado->id << "," << empleado->nombre << "," << empleado->apellido << "," << empleado->supervisor->ObtenerNombre() << "," << empleado->monto;
     return o;
 }
 

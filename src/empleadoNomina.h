@@ -9,9 +9,6 @@
 using namespace std;
 
 class EmpleadoNomina : public Empleado{
-    int idNomina;
-    int MontoNomina;
-
     public:
     EmpleadoNomina();
 

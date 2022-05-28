@@ -7,5 +7,5 @@ EmpleadoHoras::EmpleadoHoras() {
 }
 
 void EmpleadoHoras::CalculoPago(){
-    MontoHoras = MontoHoras - ((MontoHoras * 7)/100);
+   monto = monto * horas;
 }

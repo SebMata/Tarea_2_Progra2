@@ -2,26 +2,13 @@
 #include <iostream>
 #include <sstream>
 
+
 EmpleadoNomina::EmpleadoNomina() {
 
 }
 
 void EmpleadoNomina::CalculoPago(){
-    MontoNomina = MontoNomina - ((MontoNomina * 7)/100);
+    impuestos+=((this->monto * 7)/100);
+    this->monto = this->monto - ((this->monto * 7)/100);
 }
 
-
-/*istream& operator >> (istream &i, EmpleadoNomina *empleadonomina)
-{
-    string linea;
-
-    while (std::getline(i, linea)) {
-
-        std::istringstream streamLinea(linea);
-        empleadonomina->CalculoPago();
-        
-    }
-
-    return i;
-    
-}*/

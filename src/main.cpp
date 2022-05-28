@@ -16,7 +16,7 @@ int main() {
 
     ifstream archivoPersonas("personas.txt", std::ifstream::in);
 
-    if (!archivoPersonas.is_open())
+     if (!archivoPersonas.is_open())
     {
         std::cerr << "Error abriendo archivo categorias.txt" << std::endl;
         return -1;
@@ -33,8 +33,21 @@ int main() {
         std::cerr << "Error abriendo archivo categorias.txt" << std::endl;
         return -1;
     }
+    archivoNomina > planilla;
 
     archivoNomina.close();
+
+    ifstream archivoHoras("horastrabajadas.txt", std::ifstream::in);
+
+    if (!archivoHoras.is_open())
+    {
+        std::cerr << "Error abriendo archivo categorias.txt" << std::endl;
+        return -1;
+    }
+
+    archivoHoras + planilla;
+
+    archivoHoras.close();
 
 
     ofstream reporte("reporte.csv", std::ifstream::out); 

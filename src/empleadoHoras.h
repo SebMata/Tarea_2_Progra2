@@ -7,9 +7,7 @@
 #include <iostream>
 
 class EmpleadoHoras : public Empleado{
-    int idHoras;
-    int MontoHoras;
-    int Horas;
+    
 
     public:
     EmpleadoHoras();
