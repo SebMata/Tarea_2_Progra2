@@ -23,6 +23,7 @@ class Empleado{
 
     public:
     Empleado();
+    ~Empleado();
 
     void InsertarSubordinado(Empleado *subordinado);
     void AsigneSupervisor(Empleado *supervisor);

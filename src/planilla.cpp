@@ -20,17 +20,19 @@ Planilla::~Planilla() {
     }
 }
 
-void Planilla::AgregarEmpleado(Empleado *nuevoEmpleado) {
-    this->empleados.push_back(nuevoEmpleado);
-    if(jefe==nullptr){
+void Planilla::AgregarEmpleado(Empleado *nuevoEmpleado) 
+{
+    if(this->jefe==nullptr){
         this->jefe=nuevoEmpleado;
         nuevoEmpleado->AsigneSupervisor(nuevoEmpleado);
         this->indiceEmpleados.insert( std::pair<int, Empleado *>(nuevoEmpleado->ObtenerId(), jefe));
+        this->empleados.push_back(nuevoEmpleado);
     }else{
         Empleado* supervisor = this->indiceEmpleados.at(nuevoEmpleado->ObtenerIdSupervisor());
         nuevoEmpleado->AsigneSupervisor(supervisor);
         supervisor->InsertarSubordinado(nuevoEmpleado);
         this->indiceEmpleados.insert( std::pair<int, Empleado *>(nuevoEmpleado->ObtenerId(), nuevoEmpleado));
+        this->empleados.push_back(nuevoEmpleado);
     }
 }
 
@@ -48,6 +50,26 @@ void Planilla::CalculeImpuestos()
     {
         this->impuestos+=empleado->ObtenerImpuestos();
     }
+}
+
+double Planilla::ObtenerSubtotal()
+{
+    return this->subTotal;
+}
+
+double Planilla::ObtenerImpuestosTotales()
+{
+    return this->impuestos;
+}
+
+double Planilla::ObtenerTotal()
+{
+    return this->impuestos + this->subTotal;
+}
+
+int Planilla::TotalEmpleados()
+{
+    return this->empleados.size();
 }
 
 ostream& operator << (ostream &o, const Planilla *planilla)

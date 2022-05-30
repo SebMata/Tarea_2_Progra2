@@ -4,6 +4,10 @@ Empleado::Empleado() {
 
 }
 
+Empleado::~Empleado() {
+    
+}
+
 void Empleado::InsertarSubordinado(Empleado *subordinado)
 {
     this->subordinados.push_back(subordinado);

@@ -22,7 +22,10 @@ class Planilla {
     void AgregarEmpleado(Empleado *nuevoEmpleado);
     void CalculeSubTotal();
     void CalculeImpuestos();
-    void CalculeTotal();
+    double ObtenerSubtotal();
+    double ObtenerImpuestosTotales();
+    double ObtenerTotal();
+    int TotalEmpleados();
 
     friend istream& operator >> (istream &o, Planilla *planilla);
     friend ostream& operator << (ostream &o, const Planilla *planilla);
