@@ -55,7 +55,7 @@ string Empleado::ObtenerNombre()
 
 ostream& operator << (ostream &o, const Empleado *empleado)
 {
-    o << empleado->id << "," << empleado->nombre << "," << empleado->apellido << "," << empleado->supervisor->ObtenerNombre() << "," << empleado->monto;
+    o << empleado->id << "," << empleado->nombre << " " << empleado->apellido << "," << empleado->supervisor->ObtenerNombre() << "," << empleado->monto;
     return o;
 }
 
