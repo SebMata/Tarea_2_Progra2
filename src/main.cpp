@@ -7,7 +7,6 @@
 #include "empleadoNomina.h"
 #include "planilla.h"
 #include <vector>
-
 using namespace std;
 
 int main() {

@@ -17,9 +17,9 @@ namespace{
         streamStringsEntrada3 >> empleado;
         planilla->AgregarEmpleado(empleado);
 
-        string test2 = "451 Ryan Webster Ryan_Webster6612@hourpy.biz 2 214";
+        string test2 = "2 Clarissa Parker clarissa_parker@biz.com 1 1";
         istringstream streamStringsEntrada(test2);
-        EmpleadoHoras *empleado2 = new EmpleadoHoras();
+        EmpleadoNomina *empleado2 = new EmpleadoNomina();
         streamStringsEntrada >> empleado2;
         planilla->AgregarEmpleado(empleado2);
 
@@ -46,11 +46,11 @@ namespace{
         empleado->CalculoPago();
         planilla->AgregarEmpleado(empleado);
         
-        string test2 = "451 Ryan Webster Ryan_Webster6612@hourpy.biz 2 214";
+        string test2 = "2 Clarissa Parker clarissa_parker@biz.com 1 1";
         istringstream streamStringsEntrada(test2);
-        EmpleadoHoras *empleado2 = new EmpleadoHoras();
+        EmpleadoNomina *empleado2 = new EmpleadoNomina();
         streamStringsEntrada >> empleado2;
-        string horasPago = "451 42.26 55";
+        string horasPago = "2 3097.50";
         istringstream streamStringsEntrada2(horasPago);
         int horas;
         streamStringsEntrada2 >> id >> monto >> horas;
@@ -64,13 +64,13 @@ namespace{
 
 
         double actual = planilla->ObtenerSubtotal();
-        double esperada = 6603.2114;
+        double esperada = 7159.5864;
 
         double actual1 = planilla->ObtenerImpuestosTotales();
-        double esperada1 = 322.0686;
+        double esperada1 = 538.8936;
 
         double actual2= planilla->ObtenerTotal();
-        double esperada2 = 6925.28;
+        double esperada2 = 7698.48;
 
         EXPECT_FLOAT_EQ(actual, esperada);
         EXPECT_FLOAT_EQ(actual1, esperada1);
